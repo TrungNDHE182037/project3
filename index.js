@@ -11,18 +11,14 @@ const multerS3 = require('multer-s3');
 
 const app = express(); 
 
-// Create an S3 client instance
+// Create an S3 client instance without credentials
 const s3Client = new S3Client({
-    region: "ap-northeast-1",
-    credentials: {
-        accessKeyId: process.env.ACCESS_KEY,
-        secretAccessKey: process.env.ACCESS_SECRET,
-    },
-}); 
+    region: "ap-northeast-1", // specify your region
+    // The SDK will automatically use the IAM role attached to the EC2 instance
+});
 
 // Get the bucket name from environment variables
 const BUCKET_NAME = "swudds3bucket";
-
 
 // Configure Multer for file uploads to S3
 const upload = multer({
