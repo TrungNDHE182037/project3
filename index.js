@@ -13,7 +13,7 @@ const app = express();
 
 // Create an S3 client instance
 const s3Client = new S3Client({
-    region: process.env.REGION,
+    region: "ap-northeast-1",
     credentials: {
         accessKeyId: process.env.ACCESS_KEY,
         secretAccessKey: process.env.ACCESS_SECRET,
