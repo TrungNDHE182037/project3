@@ -21,7 +21,7 @@ const s3Client = new S3Client({
 }); 
 
 // Get the bucket name from environment variables
-const BUCKET_NAME = process.env.BUCKET_NAME;
+const BUCKET_NAME = "swudds3bucket";
 
 
 // Configure Multer for file uploads to S3
